@@ -42,6 +42,7 @@ if (isset($_POST['update'])) {
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="edit.css">
     <title>Klant bewerken</title>
     <style>
         body { font-family: Arial; margin: 20px; }

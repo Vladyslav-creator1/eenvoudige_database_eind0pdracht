@@ -36,6 +36,7 @@ if (isset($_GET['delete'])) {
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="edit.css">
     <title>CRM - Clients</title>
     <style>
         body { font-family: Arial; margin: 20px; }
@@ -82,10 +83,6 @@ if (isset($_GET['delete'])) {
             <td><?= htmlspecialchars($client['adres']) ?></td>
             <td><?= htmlspecialchars($client['woonplaats']) ?></td>
             <td><?= $client['created_at'] ?></td>
-            <td>
-                <a href="?delete=<?= $client['id'] ?>" class="delete"
-                   onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')">Verwijderen</a>
-            </td>
             <td>
                 <a href="edit.php?id=<?= $client['id'] ?>" class="edit">Bewerken</a>
                 <a href="?delete=<?= $client['id'] ?>" class="delete"
