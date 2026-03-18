@@ -2,11 +2,11 @@
 global $pdo;
 require 'db.php';
 
-// Получаем всех клиентов
+// get all clients
 $stmt = $pdo->query("SELECT * FROM usersdb");
 $clients = $stmt->fetchAll();
 
-// Добавление нового клиента
+// add new clients
 if (isset($_POST['add'])) {
     $naam = $_POST['naam'];
     $email = $_POST['email'];
@@ -20,7 +20,7 @@ if (isset($_POST['add'])) {
     exit;
 }
 
-// Удаление клиента
+// delete client
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
@@ -83,6 +83,11 @@ if (isset($_GET['delete'])) {
             <td><?= htmlspecialchars($client['woonplaats']) ?></td>
             <td><?= $client['created_at'] ?></td>
             <td>
+                <a href="?delete=<?= $client['id'] ?>" class="delete"
+                   onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')">Verwijderen</a>
+            </td>
+            <td>
+                <a href="edit.php?id=<?= $client['id'] ?>" class="edit">Bewerken</a>
                 <a href="?delete=<?= $client['id'] ?>" class="delete"
                    onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')">Verwijderen</a>
             </td>
