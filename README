@@ -1,0 +1,82 @@
+README
+Projectbeschrijving
+
+Deze CRM-webapplicatie is ontwikkeld in PHP met een MySQL-database en maakt gebruik van PDO voor databaseverbindingen. De applicatie biedt volledige CRUD-functionaliteit (Create, Read, Update, Delete) voor het beheren van klantgegevens (NAW + e-mail).
+
+Gebruikers kunnen via een webinterface klanten toevoegen, bekijken, bewerken en verwijderen zonder directe database-interactie.
+
+Functionaliteiten
+Create (Toevoegen)
+
+Nieuwe klanten worden toegevoegd via een formulier in index.php. De gegevens worden opgeslagen met een prepared statement.
+
+Read (Weergeven)
+
+Alle klanten worden opgehaald met een SELECT-query en weergegeven in een tabel.
+
+Update (Bewerken)
+
+Via edit.php kunnen bestaande klantgegevens aangepast worden. De gegevens worden vooraf ingevuld en bijgewerkt met een UPDATE-query.
+
+Delete (Verwijderen)
+
+Klanten kunnen verwijderd worden via een knop in het overzicht. Er wordt een bevestigingspopup gebruikt om fouten te voorkomen.
+
+Technische opbouw
+Bestanden
+db.php: Verzorgt de databaseverbinding met PDO
+index.php: Bevat Read, Create en Delete functionaliteit
+edit.php: Bevat Update functionaliteit
+Databaseverbinding
+
+De applicatie gebruikt PDO met foutafhandeling:
+
+PDO::ATTR_ERRMODE = PDO::ERRMODE_EXCEPTION
+Database
+
+Tabel: usersdb
+
+Velden:
+
+id (INT, primary key, auto increment)
+naam (VARCHAR)
+email (VARCHAR)
+adres (VARCHAR)
+woonplaats (VARCHAR)
+created_at (TIMESTAMP)
+SQL-gebruik
+
+De applicatie gebruikt prepared statements voor alle databasebewerkingen:
+
+SELECT * FROM usersdb
+INSERT INTO usersdb (naam, email, adres, woonplaats)
+UPDATE usersdb SET ... WHERE id = ?
+DELETE FROM usersdb WHERE id = ?
+
+Hiermee wordt SQL-injection voorkomen.
+
+Beveiliging (AVG)
+
+Toegepaste maatregelen:
+
+Prepared statements tegen SQL-injection
+htmlspecialchars() voor veilige output
+Required velden in formulieren
+Bevestiging bij verwijderen
+
+Verbeterpunten:
+
+Extra server-side validatie
+Input filtering
+Logging van acties
+Installatie
+Start XAMPP of andere lokale server
+Maak database eindopdracht_db
+Importeer tabel usersdb
+Controleer db.php instellingen
+Open index.php in browser
+Gebruik
+Voeg klant toe via formulier
+Bekijk klanten in tabel
+Klik op "Bewerken" om gegevens aan te passen
+Klik op "Verwijderen" om klant te verwijderen
