@@ -21,7 +21,7 @@ if (!$client) {
     exit;
 }
 
-// Verwerk het update-formulier
+// Verwerk het update-formulier+
 if (isset($_POST['update'])) {
     $naam = $_POST['naam'];
     $email = $_POST['email'];
@@ -44,8 +44,7 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="edit.css">
     <title>Klant bewerken</title>
-    <style>
-        body { font-family: Arial; margin: 20px; }
+    <style>+       body { font-family: Arial; margin: 20px; }
         .edit-form {
             max-width: 500px;
             padding: 20px;
