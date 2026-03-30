@@ -44,37 +44,7 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <link rel="stylesheet" href="edit.css">
     <title>Klant bewerken</title>
-    <style>+       body { font-family: Arial; margin: 20px; }
-        .edit-form {
-            max-width: 500px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 5px;
-        }
-        .edit-form input {
-            width: 100%;
-            padding: 8px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-        .edit-form button {
-            padding: 10px 20px;
-            background: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-        .cancel {
-            background: #666;
-            margin-left: 10px;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-    </style>
+
 </head>
 <body>
 <h1>Klant bewerken</h1>

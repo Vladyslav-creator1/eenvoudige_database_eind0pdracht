@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+
+// als niet ingelogd doorgesturd naar login pagina
+if (!isset($_SESSION['user'])) {
+    header("Location: Inlogin.php");
+    exit();
+}
 global $pdo;
 require 'db.php';
 
@@ -29,32 +37,31 @@ if (isset($_GET['delete'])) {
 
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
+
+
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="nl">
-<head>
+<link>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="edit.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>CRM - Clients</title>
     <style>
-        body { font-family: Arial; margin: 20px; }
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         th { background: #f2f2f2; }
-        .add-form { margin-bottom: 20px; padding: 15px; background: #f9f9f9; }
-        .add-form input { padding: 8px; margin-right: 10px; margin-bottom: 10px; }
-        .add-form button { padding: 8px 15px; background: #4CAF50; color: white; border: none; cursor: pointer; }
-        .delete { color: red; text-decoration: none; margin-left: 10px; }
     </style>
 </head>
 <body class="container mt-5">
+<a id="logout" href="Inlogin.php" class="btn btn-secondary btn-sm">Logout</a>
 <h1>CRM - Clients</h1>
 
 <!-- Form to add new client -->
 <div class="card mb-4">
+
     <div class="card-body">
         <h3 class="card-title">Nieuwe klant toevoegen</h3>
         <form method="POST" class="row g-3">
@@ -97,7 +104,7 @@ if (isset($_GET['delete'])) {
             <td><?= htmlspecialchars($client['woonplaats']) ?></td>
             <td><?= $client['created_at'] ?></td>
             <td>
-                <a href="edit.php?id=<?= $client['id'] ?>" class="btn btn-primary btn-sm">Bewerken</a>
+                <a href="Edit.php?id=<?= $client['id'] ?>" class="btn btn-primary btn-sm">Bewerken</a>
                 <a href="?delete=<?= $client['id'] ?>" class="btn btn-danger btn-sm"
                    onclick="return confirm('Weet je zeker dat je deze klant wilt verwijderen?')">Verwijderen</a>
             </td>
