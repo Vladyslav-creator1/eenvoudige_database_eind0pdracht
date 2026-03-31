@@ -56,7 +56,7 @@ if (isset($_GET['delete'])) {
     </style>
 </head>
 <body class="container mt-5">
-<a id="logout" href="Inlogin.php" class="btn btn-secondary btn-sm">Logout</a>
+<a id="logout" href="logout.php" class="btn btn-secondary btn-sm">Logout</a>
 <h1>CRM - Clients</h1>
 
 <!-- Form to add new client -->

@@ -11,9 +11,9 @@ $password = $_POST['password'];
 if ($username === $valid_user && $password === $valid_pass) {
     $_SESSION['user'] = $username;
 
-    // редирект на главную страницу
+    // doorgesturd naar index pagina
     header("Location: index.php");
     exit();
 } else {
-    echo "Неверный логин или пароль";
+    echo "login or password are incorrect";
 }
