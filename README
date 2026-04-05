@@ -67,16 +67,4 @@ Bevestiging bij verwijderen
 Verbeterpunten:
 
 Extra server-side validatie
-Input filtering
-Logging van acties
-Installatie
-Start XAMPP of andere lokale server
-Maak database eindopdracht_db
-Importeer tabel usersdb
-Controleer db.php instellingen
-Open index.php in browser
-Gebruik
-Voeg klant toe via formulier
-Bekijk klanten in tabel
-Klik op "Bewerken" om gegevens aan te passen
-Klik op "Verwijderen" om klant te verwijderen
+login with hasing password
