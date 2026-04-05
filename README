@@ -22,11 +22,21 @@ Delete (Verwijderen)
 
 Klanten kunnen verwijderd worden via een knop in het overzicht. Er wordt een bevestigingspopup gebruikt om fouten te voorkomen.
 
+Search (zoeken)
+
+Klanten kunnen zoeken worden wia knop in het overzicht.
+
+Login (bescherming)
+
+Om te voorkomen dat u door alle gebruikers met geen login en wachtwoord kunt komen
+
 Technische opbouw
 Bestanden
 db.php: Verzorgt de databaseverbinding met PDO
 index.php: Bevat Read, Create en Delete functionaliteit
 edit.php: Bevat Update functionaliteit
+inlogin.php: Bevat login functionaliteit
+logout.php Bevat logout functionaliteit
 Databaseverbinding
 
 De applicatie gebruikt PDO met foutafhandeling:
@@ -63,6 +73,7 @@ Prepared statements tegen SQL-injection
 htmlspecialchars() voor veilige output
 Required velden in formulieren
 Bevestiging bij verwijderen
+login systeem
 
 Verbeterpunten:
 
